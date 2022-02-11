@@ -1,0 +1,54 @@
+@function vh($size){
+    // @return ((100vh * $size)/1080);
+    $cal: calc((var(--vh) * #{$size} * 1px)/1080);
+    @return $cal;
+}
+@function vw($size){
+    // @return ((100vh * $size)/1080);
+    $cal: calc((var(--vw) * #{$size} * 1px)/1920);
+    @return $cal;
+}
+@function svgLike($color, $stroke:null){
+    
+    @if $color != 'none'{
+        $color: '%23'+$color;
+    }
+    
+    @if $stroke == null {
+        $stroke: 'none';
+    }
+    @else{
+        $stroke: '%23'+$stroke;
+    }
+    $url: "data:image/svg+xml,%3Csvg width='29' height='25' viewBox='0 0 29 25' fill='#{$color}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.16994 1C4.21009 1 1 4.18066 1 8.10417C1 15.2083 9.47357 21.6667 14.0363 23.169C18.5989 21.6667 27.0725 15.2083 27.0725 8.10417C27.0725 4.18066 23.8624 1 19.9026 1C17.4776 1 15.3338 2.19279 14.0363 4.0185C12.7387 2.19279 10.5949 1 8.16994 1Z' stroke='#{$stroke}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A";
+    @return url($url);
+}
+@function str-to-list($string, $separator: ' ', $startAt: 1) {
+    $workStr: str-slice($string,$startAt);
+    $list: ();
+    $indexOfFirstSpace: str-index($workStr,$separator);
+    @if $indexOfFirstSpace == null {
+        $list: ($workStr);
+    } @else {
+        $list: (str-slice($workStr, 1, $indexOfFirstSpace - 1));
+        $list: join($list,str-to-list($workStr, $startAt: $indexOfFirstSpace + 1));
+    }
+    @return $list;
+}
+  
+@function parent-append($appendix, $parent, $at-start) {
+    $parentSelector: str-to-list(#{&});
+    $length: length($parentSelector);
+    @if $parent >=$length or $parent < 0 {
+        @error "Index '#{$parent}' is out of range";
+    }
+    $pos: $length - $parent;
+    @if $at-start == false {
+        $selector: set-nth($parentSelector, $pos, nth($parentSelector, $pos) + $appendix);
+        @return $selector;
+    }
+    @if $at-start == true {
+        $selector: set-nth($parentSelector, $pos, $appendix + nth($parentSelector, $pos));
+        @return $selector;
+    }
+}

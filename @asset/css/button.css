@@ -1,0 +1,26 @@
+.btn .btn-round, .btn .btn-stroke {
+  display: block;
+  width: 100%;
+  height: vh(40);
+  border-radius: 20px;
+  font-size: vh(18);
+  line-height: vh(40);
+  text-align: center;
+}
+
+.btn-round {
+  background: #000;
+  color: #fff;
+  -webkit-transition: background .25s;
+  transition: background .25s;
+}
+
+.btn-round:hover {
+  background: #FFCC00;
+  color: #000;
+}
+
+.btn-stroke {
+  border: 1px solid #000;
+}
+/*# sourceMappingURL=button.css.map */

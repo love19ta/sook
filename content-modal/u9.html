@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="/@asset/css/common.css">
+	<link rel="stylesheet" href="/@asset/css/frame.css">
+</head>
+<body>
+
+	<div class="frame">
+		<div class="frame-inner frame-video">
+			<div class="frame-header">
+				<p class="title big">영상제목</p>
+			</div>
+			<div class="m_box-none">
+				<div class="cont">
+					<figure><img src="/@asset/img/dummy/video.jpg" alt=""></figure>
+                    <div class="link">
+                        <div class="view-box">
+                            <a href="#" class="btn btn-trans">Link</a>
+                            <div class="view-count">
+                                <span class="count">조회수 <em>311회</em></span>
+                                <button class="like-btn"><i class="icon-like"></i>21</button>
+                            </div>
+                        </div>
+                        <p class="desc">이미지 설명 내용 이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용이미지 설명 내용 (최대 몇글자?)</p>
+                    </div>
+				</div>
+			</div>
+		
+			<button class="frame-close"><span class="blind">닫기</span></button>
+		</div>
+	</div>
+
+	<script src="/@asset/js/jquery-3.6.0.min.js"></script>
+	<script src="/@asset/js/common.js"></script>
+	<script>
+		$('.title').on('click', function(e){
+            e.preventDefault();
+            const _this = $(this);
+            const $wrap = $('.frame-profile');
+            let idx = _this.index();
+
+            _this.addClass('active').siblings().removeClass('active');
+
+            $wrap.find('.cont').siblings().removeClass('active');
+            $wrap.find('.cont').eq(idx).addClass('active');
+        });
+
+        $('.like-btn').on('click', function(e){
+            e.preventDefault();
+            $(this).toggleClass('active').find('.icon-like').toggleClass('active');
+        });
+	</script>
+</body>
+</html>

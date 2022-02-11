@@ -1,0 +1,84 @@
+.inp{
+    &-wrap{
+        display: flex;
+        position: relative;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+    &-title{
+        min-width: 50px;
+        margin-right: 20px;
+        text-align: right;
+        font-size: 18px;
+    }
+    &-input{
+        box-sizing: border-box;
+        width: 100%;
+        height: 40px;
+        padding: 9px 18px;
+        background-color: #fff;
+        border: 1px solid #000;
+        border-radius: 20px;
+        font-size: 14px;
+        &::placeholder{
+            color: #ccc;
+        }
+        &[type=text]:read-only{
+            color: #ccc;
+        }
+    }
+    &-select{
+        position: relative;
+        width: 100%;
+        .btn-select{
+            position: relative;
+            text-align: left;
+
+            &::after{
+                content: '';
+                position: absolute;
+                right: 14px;
+                top: 50%;
+                width: 10px;
+                height: 5px;
+                background: url(../img/icon_drop-down.png) no-repeat 50% / 100% auto;
+                transform: translateY(-50%);
+                transition: transform .25s;
+                @include parent-append('.on', 0, true){
+                    transform: translateY(-50%) rotate(180deg);    
+                }
+            }
+        }
+        ul{
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            margin-top: 10px;
+            background-color: #fff;
+            border: 1px solid #000;    
+            border-radius: 20px;
+            opacity: 0;
+            visibility: hidden;
+            &.show{
+                opacity: 1;
+                visibility: visible;
+            }
+            a{
+                display: block;
+                height: 40px;
+                padding: 0 18px;
+                border-radius: 20px;
+                line-height: 40px;
+                &:hover{
+                    background-color: #F5F5F5;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+    &-text{
+        font-size: 14px;
+        color: #CCCCCC;
+    }
+}

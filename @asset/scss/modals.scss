@@ -1,0 +1,55 @@
+@import 'base';
+
+.modal{
+    --vh: 1080;
+    opacity: 0;
+    transition: opacity .5s;
+    &.show{
+        opacity: 1;
+    }
+    &-inner{
+        overflow: hidden;
+        position: absolute;
+        z-index: 100;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &_close{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 40px;
+        height: 40px;
+        background: url('../img/close.svg') no-repeat 50% 50% / cover;
+    }
+    &_terms{
+        min-width: 540px;
+        max-width: 1200px;
+        width: 98%;
+        height: 70%;
+        .m_box{
+            border-radius: 0;
+        }
+        .subject{
+            margin: 0 -30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #F5F5F5;
+
+        }
+        .cont{
+            overflow: auto;
+            width: calc(100% + 30px);
+            height: calc(100% - 87px);
+            margin-top: 0;
+            padding-top: 40px;
+            padding-right: 30px;
+        }
+    }
+    &_profile{
+        overflow: auto;
+        width: 540px;
+        max-height: 98%;
+        border-radius: 20px;
+    }
+}

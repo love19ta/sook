@@ -1,0 +1,5 @@
+@mixin parent-append($appendix, $parent: 1, $at-start: false) {
+    @at-root #{parent-append($appendix, $parent, $at-start)} {
+       @content;
+    }
+ }

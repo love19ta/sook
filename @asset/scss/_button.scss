@@ -1,0 +1,44 @@
+.btn{
+	display: block;
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
+	font-size: 18px;
+	line-height: 38px;
+	text-align: center;
+	&:hover{
+		background: #FFCC00;
+		color: #000;
+	}
+	&-wrap{
+		margin-bottom: 20px;
+	}
+	&-round{
+		background: #000;
+		border: 1px solid #fff;
+		color: #fff;
+		transition: background .25s;
+		&:hover{
+			background: #FFCC00;
+			color: #000;
+		}
+	}
+	&-stroke{
+		background: #fff;
+		border: 1px solid #000;
+	}
+
+	&-trans{
+		display: inline-block;
+		width: auto;
+		padding: 0 30px;
+		background: rgba(0, 0, 0, 0.5); 
+		font-size: 24px;
+		font-weight: 700;
+		color: #fff;
+	}
+
+	& + &{
+		margin-top: 20px;
+	}
+}

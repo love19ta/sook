@@ -1,0 +1,20 @@
+:root { --vh: 1080; --inner-scale: 1; --vw: 1920 ; }
+
+.modal { --vh: 1080; opacity: 0; -webkit-transition: opacity .5s; transition: opacity .5s; }
+
+.modal.show { opacity: 1; }
+
+.modal-inner { overflow: hidden; position: absolute; z-index: 100; left: 50%; top: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.modal_close { position: absolute; right: 20px; top: 20px; width: 40px; height: 40px; background: url("../img/close.svg") no-repeat 50% 50%/cover; }
+
+.modal_terms { min-width: 540px; max-width: 1200px; width: 98%; height: 70%; }
+
+.modal_terms .m_box { border-radius: 0; }
+
+.modal_terms .subject { margin: 0 -30px; padding-bottom: 15px; border-bottom: 1px solid #F5F5F5; }
+
+.modal_terms .cont { overflow: auto; width: calc(100% + 30px); height: calc(100% - 87px); margin-top: 0; padding-top: 40px; padding-right: 30px; }
+
+.modal_profile { overflow: auto; width: 540px; max-height: 98%; border-radius: 20px; }
+/*# sourceMappingURL=modals.css.map */

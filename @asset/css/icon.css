@@ -1,0 +1,30 @@
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: url(../img/icon_round-pack.png) no-repeat 0 0/auto 101%;
+  vertical-align: top;
+}
+
+.icon.att {
+  position: absolute;
+  left: 50%;
+  top: 110px;
+  margin-left: 35px;
+  background-position-x: 0;
+  cursor: pointer;
+}
+
+.icon.att:hover {
+  background-position-x: 33.33%;
+}
+
+.icon.sound {
+  background-position-x: 100%;
+}
+
+.icon.mic {
+  background-position-x: 66.66%;
+}
+/*# sourceMappingURL=icon.css.map */
