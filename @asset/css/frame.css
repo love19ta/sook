@@ -1,5 +1,7 @@
 :root { --vh: 1080; --inner-scale: 1; --vw: 1920 ; }
 
+.confirm-box { position: absolute; z-index: 10; left: 50%; top: 50%; padding: 14px 20px; background-color: rgba(0, 0, 0, 0.5); border-radius: 40px; font-size: 21px; color: #fff; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
 .frame { overflow: hidden; position: absolute; width: 100%; height: 100%; }
 
 .frame-inner { -webkit-transform: scale(var(--inner-scale)); transform: scale(var(--inner-scale)); -webkit-transform-origin: 0 0; transform-origin: 0 0; }
@@ -38,7 +40,7 @@
 
 .frame-profile .email .btn-wrap { margin: 145px auto 0; width: 240px; }
 
-.frame-place { width: calc((var(--vh) * 700 * 1px)/1080); }
+.frame-place { width: calc((var(--vh) * 700 * 1px)/1080); height: calc((var(--vh) * 487 * 1px)/1080); }
 
 .frame-place .cont { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; margin: 70px 0 0; padding: 5px; }
 
@@ -96,6 +98,8 @@
 
 .frame-dashboard .m_box .cont { margin-top: 0; }
 
+.frame-dashboard .box { margin-top: 20px; }
+
 .type-white { padding-left: 20px; }
 
 .type-white .inp-wrap { display: block; }
@@ -122,7 +126,7 @@
 
 .unit .count { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: reverse; -ms-flex-direction: column-reverse; flex-direction: column-reverse; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 10px; text-align: center; }
 
-.unit .unit-colum3 .count { width: calc(50% - 10px); height: 90px; }
+.unit .unit-colum3 .count { width: 50%; height: 90px; margin: 0 10px; }
 
 .unit .count.bg-y { background-color: #FFCC00; }
 
@@ -133,4 +137,28 @@
 .unit .count p { font-size: 48px; font-weight: 700; }
 
 .unit .unit-colum3 .count p { font-size: 24px; }
+
+.thumb-list { margin-top: 5px; }
+
+.thumb-list a { display: block; }
+
+.thumb-list li { overflow: hidden; position: relative; margin-bottom: 30px; padding-left: 30px; border-top: 1px solid #F5F5F5; }
+
+.thumb-list .num { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; position: absolute; left: 0; width: 30px; height: 30px; background: #F5F5F5; font-weight: 700; }
+
+.thumb-list figure { float: left; width: 38%; }
+
+.thumb-list figure img { width: 100%; }
+
+.thumb-list .desc-box { float: right; -webkit-box-sizing: border-box; box-sizing: border-box; width: 62%; padding-left: 10px; }
+
+.thumb-list .desc-subject { width: 100%; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-top: 0px; font-size: 18px; color: #000; }
+
+.thumb-list .al-flex { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.thumb-list .views { font-size: 14px; color: #999999; }
+
+.thumb-list .views-num { font-size: 24px; font-weight: 700; }
+
+.thumb-list .icon-like { width: 15px; height: 13px; background-image: url("data:image/svg+xml,%3Csvg width='29' height='25' viewBox='0 0 29 25' fill='%23999999' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.16994 1C4.21009 1 1 4.18066 1 8.10417C1 15.2083 9.47357 21.6667 14.0363 23.169C18.5989 21.6667 27.0725 15.2083 27.0725 8.10417C27.0725 4.18066 23.8624 1 19.9026 1C17.4776 1 15.3338 2.19279 14.0363 4.0185C12.7387 2.19279 10.5949 1 8.16994 1Z' stroke='none' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A"); }
 /*# sourceMappingURL=frame.css.map */
