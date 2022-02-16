@@ -36,6 +36,7 @@ function tab(){
     $tabBtn.eq(0).addClass('active');
 
     $tabBtn.on('click', function(e){
+        console.log('in');
         e.preventDefault();
         const _this = $(this);
         let idx = _this.index();
