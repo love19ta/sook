@@ -13,10 +13,10 @@
     <div id="wrap">
         <main id="container">
             <figure class="main-bg"><img src="@asset/img/dummy/main_bg.jpg" alt=""></figure>
-            <div class="login-box hide"> <!-- .show / .hide 추가시 화면 출력 여부 -->
+            <div class="login-box"> <!-- .show / .hide 추가시 화면 출력 여부 -->
                 <figure class="logo"><img src="@asset/img/dummy/logo.jpg" alt=""></figure>
                 <ul class="login-list">
-                    <li><a href="#" class="btn-round btn_modal " data-modal="profile">비회원 입장</a></li>
+                    <li><a href="#" class="btn btn-round btn_modal" data-modal="profile">비회원 입장</a></li>
                     <li><a href="#"><img src="@asset/img/dummy/kakao-login.jpg" alt="카카오톡으로 시작하기"></a></li>
                     <li><a href="#"><img src="@asset/img/dummy/google-login.jpg" alt="구글로 시작하기"></a></li>
                 </ul>
@@ -28,16 +28,36 @@
             </footer>
         </main>
     </div>
+
+
     <script src="@asset/js/jquery-3.6.0.min.js"></script>
     <script src="@asset/js/common.js"></script>
     <script src="@asset/js/modal.js"></script>
     <script src="@asset/js/input.js"></script>
+    <script>
+        // iframe  test용 임시
+        $(document).ready(function(){
+            const url = new URL(location.href);
+            const urlParams = url.searchParams;
+            const page = urlParams.get('page');
+            const width = urlParams.get('width');
+            const height = urlParams.get('height');
+            let _src = 'content-modal/'+page+'.html';
+            let iframe = $('<iframe class="iframe" frameborder="0" src="" />');
 
-    <iframe class="iframe" src="content-modal/u4.html" frameborder="0" style="width: calc((var(--vh) * 700 * 1px)/1080);height: calc((var(--vh) * 487 * 1px)/1080);"></iframe>
-    <!-- <iframe class="iframe" src="content-modal/u5.html" frameborder="0" style="width: calc((var(--vh) * 540 * 1px)/1080);height: calc((var(--vh) * 330 * 1px)/1080);"></iframe> -->
-    <!-- <iframe class="iframe" src="content-modal/u7.html" frameborder="0" style="width: calc((var(--vh) * 540 * 1px)/1080);height: calc((var(--vh) * 770 * 1px)/1080);"></iframe> -->
-    <!-- <iframe class="iframe" src="content-modal/u9.html" frameborder="0" style="width: calc((var(--vh) * 1200 * 1px)/1080);height: calc((var(--vh) * 900 * 1px)/1080);"></iframe> -->
-    <!-- <iframe class="iframe" src="content-modal/au4.html" frameborder="0" style="width: calc((var(--vh) * 1200 * 1px)/1080);height: calc((var(--vh) * 600 * 1px)/1080);"></iframe> -->
-    <!-- <iframe class="iframe" src="content-modal/au8.html" frameborder="0" style="width: calc((var(--vh) * 1200 * 1px)/1080);height: calc((var(--vh) * 860 * 1px)/1080);"></iframe> -->
+            if(page == null) {
+                return false;
+            }else{
+                $('.login-box').addClass('hide');
+                $('body').append(iframe);
+            }
+
+            iframe.attr({
+                'src': _src,
+                'style': 'width: calc((var(--vh) * '+width+' * 1px)/1080);height: calc((var(--vh) * '+height+' * 1px)/1080);'
+            });
+
+        });
+    </script>
 </body>
 </html>

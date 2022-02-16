@@ -1,9 +1,14 @@
 $(document).ready(function () {
     calcVh();
+    tab();
 });
 
 $(window).on('resize', function () {
     calcVh();
+}).on('load', function(){
+    setTimeout(function(){
+        $('.frame-inner').show();
+    }, 0);
 });
 
 function calcVh() {
@@ -20,4 +25,24 @@ function calcVh() {
         $(":root").css({ '--vh': winH, '--vw': winW });
 
     }
+}
+
+function tab(){
+    const $wrap = $('.frame-inner');
+    const $tabBtn = $('.frame-header button.title');
+    const $tabCont = $wrap.find('.cont');
+
+    $tabCont.eq(0).addClass('active');
+    $tabBtn.eq(0).addClass('active');
+
+    $tabBtn.on('click', function(e){
+        e.preventDefault();
+        const _this = $(this);
+        let idx = _this.index();
+
+        _this.addClass('active').siblings().removeClass('active');
+
+        $tabCont.siblings().removeClass('active');
+        $tabCont.eq(idx).addClass('active');
+    })
 }

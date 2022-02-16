@@ -91,18 +91,5 @@
 	<script src="/@asset/js/jquery-3.6.0.min.js"></script>
 	<script src="/@asset/js/common.js"></script>
 	<script src="/@asset/js/input.js"></script>
-	<script>
-		$('.title').on('click', function(e){
-				e.preventDefault();
-				const _this = $(this);
-				const $wrap = $('.frame-profile');
-				let idx = _this.index();
-
-				_this.addClass('active').siblings().removeClass('active');
-
-				$wrap.find('.cont').siblings().removeClass('active');
-				$wrap.find('.cont').eq(idx).addClass('active');
-			})
-	</script>
 </body>
 </html>
